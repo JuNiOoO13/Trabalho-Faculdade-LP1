@@ -1,0 +1,29 @@
+﻿@model Cliente
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form asp-action="UpdateCliente"  style="color:white">
+    <input type="hidden" asp-for="IdCliente"/>
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label"></label>
+        <input type="text" asp-for="Nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="form-text">@Html.ValidationMessageFor(c => c.Nome)</div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input type="email" asp-for="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="form-text">@Html.ValidationMessageFor(c => c.Email)</div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Senha" class="form-label"></label>
+        <input type="text" asp-for="Senha" class="form-control">
+        <div class="form-text">@Html.ValidationMessageFor(c => c.Senha)</div>
+    </div>
+
+    <button  type="submit" class="btn btn-primary">Submit</button>
+</form>

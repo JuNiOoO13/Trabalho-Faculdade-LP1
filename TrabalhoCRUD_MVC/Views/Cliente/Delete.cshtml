@@ -1,0 +1,21 @@
+﻿@model Cliente;
+
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>@Html.DisplayNameFor(x => x.IdCliente) : @Html.DisplayFor(x=> x.IdCliente)</p>
+                <p>@Html.DisplayNameFor(x => x.Nome) : @Html.DisplayFor(x=> x.Nome)</p>
+                <p>@Html.DisplayNameFor(x => x.Email) : @Html.DisplayFor(x=> x.Email)</p>
+                <p>@Html.DisplayNameFor(x => x.Senha) : @Html.DisplayFor(x=> x.Senha)</p>
+            </div>
+            <div class="modal-footer">
+                <a asp-action="Index"   class="btn btn-warning" >Voltar</a>
+                <a asp-action="DeleteCliente"  asp-route-id="@Model.IdCliente"  type="button" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>

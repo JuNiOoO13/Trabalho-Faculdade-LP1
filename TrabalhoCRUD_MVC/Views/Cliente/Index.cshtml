@@ -1,0 +1,40 @@
+﻿@model List<Cliente>;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<table class="table caption-top" style="color:white;">
+    <a asp-action="Create"  type="button" class="btn btn-primary">Criar</a>
+    <caption>List of users</caption>
+    <thead class="table-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Html.DisplayNameFor(x => x.FirstOrDefault().Nome)</th>
+            <th scope="col">@Html.DisplayNameFor(x => x.FirstOrDefault().Email)</th>
+            <th scope="col">@Html.DisplayNameFor(x => x.FirstOrDefault().Senha)</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{int cont = 1;}
+        @foreach(var client in Model)
+        {
+            <tr>
+                <th scope="row">@cont</th>
+                <td>@client.Nome</td>
+                <td>@client.Email</td>
+                <td>@client.Senha</td>
+                <td><a asp-action="Delete"  asp-route-id="@client.IdCliente" class="btn btn-danger">Excluir</a></td>
+                <td><a asp-action="Update"  asp-route-id="@client.IdCliente" class="btn btn-warning">Editar</a></td>
+            </tr>
+            cont++;
+            
+        }
+        
+        
+    </tbody>
+</table>
